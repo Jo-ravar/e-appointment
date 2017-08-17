@@ -14,3 +14,10 @@ The following steps needs to be followed in order to start the server:
 3. Start your mongoDB server
 4. Navigate into the project directory
 5. Use the command npm start
+
+
+_Server and database are needed locally will notify about connections_
+```
+Listening on port 3000
+Mongo DB Connected
+```

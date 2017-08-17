@@ -8,13 +8,14 @@ function registerUser(req, res, next) {
   const userObj = req.body;
   registerLib.addUser(userObj, function(err, result) {
     if (err) {
-      console.log(err);
-      res.status(500).json(err);
+      res.render('500', {
+        type: err.type,
+        msg: err.msg,
+        errorDetail: err.errorDetail,
+      });
       return;
     }
-    res
-      .status(200)
-      .json({ success: true, message: 'User Successfully Registered' });
+    res.redirect('/');
   });
 }
 

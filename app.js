@@ -34,12 +34,7 @@ app.set('views', 'app/views');
 // });
 
 app.get('/', function(req, res) {
-  if (
-    req.session &&
-    req.session.user &&
-    req.session.role === 'admin' &&
-    req.session.role === 'approved'
-  ) {
+  if (req.session && req.session.user) {
     res.render('dashboard');
   }
   res.render('login');
